@@ -15,16 +15,13 @@ create
 
 feature -- Basic operations
 
-	get_configuration (a_pos: detachable ALPHA_POINT_OF_SERVICE; a_component: ALPHA_COMPONENT)
+	get_configuration (a_component: ALPHA_COMPONENT)
 			-- Get a configuration specified by its `identification'.
 			-- Make result available in `last_configuration'.
 		local
 			l_request: STRING
 		do
 			l_request := "configurations"
-			if attached a_pos as la_pos then
-				l_request.append ("/" + la_pos.identification)
-			end
 			l_request.append ("/" + a_component.identification.out)
 			l_request.append ("/" + a_component.version)
 			send_get_request (l_request, Void, Void)
