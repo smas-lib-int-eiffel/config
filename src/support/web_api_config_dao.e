@@ -31,7 +31,7 @@ feature -- Input
 			-- <Precursor>
 		do
 			last_list.wipe_out
-			cfg_client.get_configuration (create {ALPHA_POINT_OF_SERVICE}.make ("3FD8A501-60CC-4F24-8567-6D6FA051BD2E"), a_component)
+			cfg_client.get_configuration (a_component)
 			if attached {G} cfg_client.last_configuration as la_configuration then
 				last_list.extend (la_configuration)
 			end

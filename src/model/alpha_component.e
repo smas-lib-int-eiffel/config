@@ -9,9 +9,6 @@ deferred class
 
 inherit
 	IDENTIFIABLE
-		redefine
-			identification
-		end
 
 feature -- Creation
 
